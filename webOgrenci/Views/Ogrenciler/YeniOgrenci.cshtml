@@ -1,0 +1,67 @@
+﻿@model webOgrenci.Models.EntityFramework.TBL_OGRENCILER
+@{
+    ViewBag.Title = "YeniOgrenci";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<form method="post" class="form-group">
+    <div>
+        <label>Öğrenci Adı</label>
+        <input type="text" class="form-control" name="OGRAD" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Öğrenci Soyadı</label>
+        <input type="text" class="form-control" name="OGRSOYAD" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Fotoğraf</label>
+        <input type="text" class="form-control" name="OGRFOTOGRAF" />
+    </div>
+    <div style="margin-top:10px">
+        <label>Cinsiyet</label>
+        <input type="text" class="form-control" name="OGRCINSIYET" />
+
+    </div>
+    <div style="margin-top:10px">
+        <label>Kulüp</label>
+        @Html.DropDownListFor(m => m.TBL_KULUPLER.KULUPID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+    </div>
+
+
+    @*<div style="margin-top:10px">
+            @Html.DropDownList("Şehirler",
+           new[]
+           {
+               new SelectListItem() {Value="1",Text="Ankara"},
+               new SelectListItem() {Value="2",Text="Adıyaman"},
+               new SelectListItem() {Value="3",Text="Konya"},
+               new SelectListItem() {Value="4",Text="Kayseri"}
+           }, "Şehir Seçiniz...", new { @class = "form-control" }
+           )
+        </div>
+        <div style="margin-top:10px">
+            <label>Film Seçin</label>
+            <select id="MovieType" name="MovieType">
+
+                <option value="0">Action</option>
+
+                <option value="1">Drama</option>
+
+                <option value="2">Comedy</option>
+
+                <option value="3">Science Fiction</option>
+
+            </select>
+        </div>
+        <div style="margin-top:10px">
+
+            @Html.DropDownList("DersAd", null, "Ders Seçin", new { @class = "form-control" })
+
+        </div>*@
+
+    <div style="margin-top:10px">
+        <button class="btn btn-info">Öğrenci Ekle</button>
+    </div>
+</form>
+
+

@@ -1,0 +1,48 @@
+﻿@using webOgrenci.Models.EntityFramework;
+@model List<TBL_NOTLAR>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>NOT ID</th>
+        <th>ÖĞRENCİ ADI</th>
+        <th>ÖĞRENCİ SOYADI</th>
+        <th>DERS</th>
+        <th>SINAV 1</th>
+        <th>SINAV 2</th>
+        <th>SINAV 3</th>
+        <th>PROJE</th>
+        <th>ORTALAMA</th>
+        <th>DURUM</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    <tbody>
+        @foreach (var not in Model)
+        {
+        <tr>
+            <td>@not.NOTID</td>
+            <td>@not.TBL_OGRENCILER.OGRAD</td>
+            <td>@not.TBL_OGRENCILER.OGRSOYAD</td>
+            <td>@not.TBL_DERSLER.DERSAD</td>
+            <td>@not.SINAV1</td>
+            <td>@not.SINAV2</td>
+            <td>@not.SINAV3</td>
+            <td>@not.PROJE</td>
+            <td>@not.ORTALAMA</td>
+            <td>@not.DURUM</td>
+            <td>
+
+                <a href="/SinavNotlari/NotGetir/@not.NOTID" class="btn btn-success">Güncelle</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
+
+<a href="/SinavNotlari/YeniSinav" class="btn btn-primary">Yeni Sınav Girişi</a>
+
+
+
